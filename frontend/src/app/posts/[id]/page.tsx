@@ -20,7 +20,11 @@ function usePost(id: number) {
   const deletePost = (id: number, onSuccess: () => void) => {
     apiFetch(`/api/v1/posts/${id}`, {
       method: "DELETE",
-    }).then(onSuccess);
+    })
+      .then(onSuccess)
+      .catch((error) => {
+        alert(`${error.resultCode} : ${error.msg}`);
+      });
   };
 
   return {
