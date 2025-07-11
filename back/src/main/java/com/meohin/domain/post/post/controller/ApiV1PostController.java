@@ -3,6 +3,7 @@ package com.meohin.domain.post.post.controller;
 import com.meohin.domain.member.member.entity.Member;
 import com.meohin.domain.member.member.service.MemberService;
 import com.meohin.domain.post.post.dto.PostDto;
+import com.meohin.domain.post.post.dto.PostWithContentDto;
 import com.meohin.domain.post.post.entity.Post;
 import com.meohin.domain.post.post.service.PostService;
 import com.meohin.global.rq.Rq;
@@ -44,10 +45,10 @@ public class ApiV1PostController {
     @GetMapping("/{id}")
     @Transactional(readOnly = true)
     @Operation(summary = "단건 조회")
-    public PostDto getItem(@PathVariable int id) {
+    public PostWithContentDto getItem(@PathVariable int id) {
         Post post = postService.findById(id).get();
 
-        return new PostDto(post);
+        return new PostWithContentDto(post);
     }
 
     @DeleteMapping("/{id}")
