@@ -1,13 +1,13 @@
-package com.back;
+package com.meohin;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class BackApplication {
+public class Application {
 
     public static void main(String[] args) {
-        SpringApplication.run(BackApplication.class, args);
+        SpringApplication.run(Application.class, args);
     }
 
 }
